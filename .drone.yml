@@ -7,15 +7,8 @@ pipeline:
   test1:
     image: mhart/alpine-node:9.1.0
     group: testing
-    secrets:
-      - source: test
-        target: test46
     commands:
-      # - sleep 5
-      # - yarn install
-      - echo $TEST
-      - echo $TEST46
-      # - node redis.js
+      - mkdir /etc/aaaa/bbbb/cccc
 
   # test2:
   #   image: appleboy/golang-testing
