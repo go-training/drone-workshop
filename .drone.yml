@@ -8,7 +8,7 @@ pipeline:
     image: mhart/alpine-node:9.1.0
     group: testing
     commands:
-      - mkdir /etc/aaaa/bbbb/cccc
+      - echo "a"
 
   test2:
     image: mhart/alpine-node:9.1.0
@@ -24,7 +24,7 @@ pipeline:
     commands:
       - mkdir /etc/aaaa/bbbb/cccc
     when:
-      status: [ failure, success ]
+      status: [ failure ]
 
   # test2:
   #   image: appleboy/golang-testing
