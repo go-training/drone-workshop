@@ -7,24 +7,34 @@ pipeline:
   test1:
     image: mhart/alpine-node:9.1.0
     group: testing
+    secrets: [ test ]
     commands:
       - echo "a"
+      - echo $TEST
 
   test2:
     image: mhart/alpine-node:9.1.0
     group: testing
     commands:
-      - mkdir /etc/aaaa/bbbb/cccc
+      - echo "a"
     when:
-      branch: [ develop ]
+      local: false
 
-  test3:
-    image: mhart/alpine-node:9.1.0
-    group: testing
-    commands:
-      - mkdir /etc/aaaa/bbbb/cccc
-    when:
-      status: [ failure ]
+  # test2:
+  #   image: mhart/alpine-node:9.1.0
+  #   group: testing
+  #   commands:
+  #     - mkdir /etc/aaaa/bbbb/cccc
+  #   when:
+  #     branch: [ develop ]
+
+  # test3:
+  #   image: mhart/alpine-node:9.1.0
+  #   group: testing
+  #   commands:
+  #     - mkdir /etc/aaaa/bbbb/cccc
+  #   when:
+  #     status: [ failure ]
 
   # test2:
   #   image: appleboy/golang-testing
