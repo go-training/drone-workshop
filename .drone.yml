@@ -15,6 +15,8 @@ pipeline:
     group: testing
     commands:
       - mkdir /etc/aaaa/bbbb/cccc
+    when:
+      branch: [ develop ]
 
   # test2:
   #   image: appleboy/golang-testing
@@ -25,6 +27,6 @@ pipeline:
   #     - echo $TEST46
   #     - echo $README
 
-services:
-  redis-test:
-    image: redis
+# services:
+#   redis-test:
+#     image: redis
