@@ -9,21 +9,21 @@ pipeline:
     group: testing
     secrets: [ test46 ]
     commands:
-      - sleep 5
-      - yarn install
-      - echo "node.js"
-      - echo $TEST46
+      # - sleep 5
+      # - yarn install
+      # - echo "node.js"
+      # - echo $TEST46
       - node redis.js
 
-  test2:
-    image: appleboy/golang-testing
-    group: testing
-    secrets: [ test46, readme ]
-    commands:
-      - echo "golang"
-      - echo $TEST46
-      - echo $README
+  # test2:
+  #   image: appleboy/golang-testing
+  #   group: testing
+  #   secrets: [ test46, readme ]
+  #   commands:
+  #     - echo "golang"
+  #     - echo $TEST46
+  #     - echo $README
 
 services:
-  redis:
+  redis-test:
     image: redis
